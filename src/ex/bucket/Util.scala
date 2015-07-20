@@ -1,8 +1,7 @@
 package ex.bucket
 
+import scala.reflect.runtime.universe._
 import java.io.{File, FileWriter}
-
-import scala.reflect.api.TypeTags.TypeTag
 
 /**
  * Created by sh0hei on 15/07/19.
@@ -13,7 +12,7 @@ object Util {
 
   def stopWatchCore(fname: String, msec: Boolean, times: Int = 1)(body: => Unit) = {
 
-    val i = 0;
+    var i = 0;
     val start = System.nanoTime()
     while (i < times) {
       body
